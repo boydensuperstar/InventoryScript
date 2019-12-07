@@ -6,7 +6,7 @@
 2. Inventory (Replace)
 3. LoadMainMenu (Add)
 4. ReturnToMainMenu (Add)
-5. SceneMana (Replace)
+5. SceneyMana (Replace)
 6. WinSceneReturn (Add)
 
 ## Downloading and Replace ##
