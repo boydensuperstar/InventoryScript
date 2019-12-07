@@ -9,3 +9,8 @@
 5. SceneMana (Replace)
 6. WinSceneReturn (Add)
 
+## Downloading and Replace ##
+1. Download a zip of this repo and unzip it. 
+2. Delete the scripts that are present in the Assets > Scripts folder
+3. Drag and drop the scripts listed above into the folder
+
