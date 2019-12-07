@@ -24,15 +24,16 @@ public class Inventory : MonoBehaviour
 
     public delegate void OnItemChanged();
     public OnItemChanged onItemChangedCallback;
-    public int ItemsCollected;
+    public static int ItemsCollected;
     public int TotalItemCount;
-    public string FinalScene;
+    public static GameObject AllGameObjects;
+
 
     public int space = 20;
 
     public List<Item> items = new List<Item>();
 
-    public bool Add (Item item)
+    public bool Add(Item item)
     {
         if (!item.isDefaultItem)
         {
@@ -47,16 +48,17 @@ public class Inventory : MonoBehaviour
 
             if (ItemsCollected >= TotalItemCount)
             {
-                SceneManager.LoadScene(FinalScene);
+                SceneManager.LoadScene("FinalScene");
                 Debug.Log("Loading Final Scene");
+                AllGameObjects.GetComponent<WinSceneReturn>().DestroyAllGameObjects();
+                
             }
 
             if (onItemChangedCallback != null)
-            onItemChangedCallback.Invoke();
+                onItemChangedCallback.Invoke();
         }
 
         return true;
-
     }
 
     public void Remove(Item item)
@@ -66,5 +68,6 @@ public class Inventory : MonoBehaviour
         if (onItemChangedCallback != null)
             onItemChangedCallback.Invoke();
     }
-    
+
+
 }
