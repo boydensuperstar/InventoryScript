@@ -50,8 +50,9 @@ public class Inventory : MonoBehaviour
             {
                 SceneManager.LoadScene("FinalScene");
                 Debug.Log("Loading Final Scene");
-                AllGameObjects.GetComponent<WinSceneReturn>().DestroyAllGameObjects();
-                
+                ItemsCollected = ItemsCollected - TotalItemCount;
+                Debug.Log("did this equal zero from inventory?" + ItemsCollected);
+
             }
 
             if (onItemChangedCallback != null)
